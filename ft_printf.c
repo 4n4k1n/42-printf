@@ -6,7 +6,7 @@
 /*   By: anakin <anakin@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/14 18:00:20 by anakin            #+#    #+#             */
-/*   Updated: 2025/02/15 16:12:28 by anakin           ###   ########.fr       */
+/*   Updated: 2025/02/15 16:21:00 by anakin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,24 +57,24 @@ int	ft_printf(const char *format, ...)
 	return (count);
 }
 
-int	main(void)
-{
-	int	nbr;
-	int	count;
+// int	main(void)
+// {
+// 	int	nbr;
+// 	int	count;
 
-	nbr = 42;
-	count = ft_printf(
-		"pointer    = %p\n" \
-		"int(d)     = %d\n" \
-		"int(i)     = %i\n" \
-		"char       = %c\n" \
-		"str        = %s\n" \
-		"str (null) = %s\n" \
-		"hex(low)   = %x\n" \
-		"hex(up)    = %X\n" \
-		"unsinged   = %u\n" \
-		"sign       = %%\n",
-		&nbr, nbr, nbr, 'c', "test test", NULL, nbr, nbr, (unsigned int)nbr);
-		ft_printf("count = %d\n", count);
-	return (0);
-}
+// 	nbr = 42;
+// 	count = ft_printf(
+// 		"pointer    = %p\n" \
+// 		"int(d)     = %d\n" \
+// 		"int(i)     = %i\n" \
+// 		"char       = %c\n" \
+// 		"str        = %s\n" \
+// 		"str (null) = %s\n" \
+// 		"hex(low)   = %x\n" \
+// 		"hex(up)    = %X\n" \
+// 		"unsinged   = %u\n" \
+// 		"sign       = %%\n",
+// 		&nbr, nbr, nbr, 'c', "test test", NULL, nbr, nbr, (unsigned int)nbr);
+// 		ft_printf("count = %d\n", count);
+// 	return (0);
+// }
