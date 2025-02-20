@@ -2,3 +2,5 @@
 *.o
 *.a
 test.c
+a.out
+*.pdf
