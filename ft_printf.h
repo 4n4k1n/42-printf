@@ -6,7 +6,7 @@
 /*   By: anakin <anakin@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/15 15:33:39 by anakin            #+#    #+#             */
-/*   Updated: 2025/02/17 22:58:57 by anakin           ###   ########.fr       */
+/*   Updated: 2025/02/22 10:26:37 by anakin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,15 +19,12 @@
 
 typedef struct s_flags
 {
-	int	minus_flag;
-	int	plus_flag;
-	int	number_flag;
-	int	hash_flag;
-	int	dot_flag;
-	int	zero_flag;
-	int	space_flag;
-	int	data_tpye;
-	int	depth;
+	int		plus;
+	int		minus;
+	int		zero;
+	int		hash;
+	int		space;
+	char	type;
 }	t_flags;
 
 int	ft_putchar(char c);
