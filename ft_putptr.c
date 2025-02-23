@@ -6,7 +6,7 @@
 /*   By: anakin <anakin@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/14 21:42:49 by anakin            #+#    #+#             */
-/*   Updated: 2025/02/15 16:05:17 by anakin           ###   ########.fr       */
+/*   Updated: 2025/02/22 23:42:10 by anakin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,6 +29,8 @@ int	ft_print_usgnd_long_nbr_hex(unsigned long int nbr)
 
 int	ft_putptr(void *ptr)
 {
+	if (!ptr)
+		return (write(1, "(nil)", 5));
 	write(1, "0x", 2);
 	return (ft_print_usgnd_long_nbr_hex((unsigned long int)ptr) + 2);
 }
