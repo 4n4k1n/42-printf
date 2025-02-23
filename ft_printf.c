@@ -6,7 +6,7 @@
 /*   By: anakin <anakin@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/14 18:00:20 by anakin            #+#    #+#             */
-/*   Updated: 2025/02/15 16:21:00 by anakin           ###   ########.fr       */
+/*   Updated: 2025/02/23 11:55:50 by anakin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -64,17 +64,26 @@ int	ft_printf(const char *format, ...)
 
 // 	nbr = 42;
 // 	count = ft_printf(
-// 		"pointer    = %p\n" \
-// 		"int(d)     = %d\n" \
-// 		"int(i)     = %i\n" \
-// 		"char       = %c\n" \
-// 		"str        = %s\n" \
-// 		"str (null) = %s\n" \
-// 		"hex(low)   = %x\n" \
-// 		"hex(up)    = %X\n" \
-// 		"unsinged   = %u\n" \
+// 		"pointer    = %p\n"
+// 		"int(d)     = %d\n"
+// 		"int(i)     = %i\n"
+// 		"char       = %c\n"
+// 		"str        = %s\n"
+// 		"str (null) = %s\n"
+// 		"hex(low)   = %x\n"
+// 		"hex(up)    = %X\n"
+// 		"unsinged   = %u\n"
 // 		"sign       = %%\n",
 // 		&nbr, nbr, nbr, 'c', "test test", NULL, nbr, nbr, (unsigned int)nbr);
 // 		ft_printf("count = %d\n", count);
+// 	return (0);
+// }
+
+// #include <stdio.h>
+// int	main(void)
+// {
+// 	int nbr = -2;
+// 	printf("original= %x\n", nbr);
+// 	ft_printf("42=       %x\n", nbr);
 // 	return (0);
 // }
