@@ -6,7 +6,7 @@
 /*   By: anakin <anakin@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/14 18:00:20 by anakin            #+#    #+#             */
-/*   Updated: 2025/02/23 11:55:50 by anakin           ###   ########.fr       */
+/*   Updated: 2025/02/25 11:04:18 by anakin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,10 @@
 
 int	print_formats(const char *format, va_list *args)
 {
+	t_flags data;
+
+	ft_prpare_flags(&data);
+	format += ft_get_flags(&data, format);
 	if (*format == 'c')
 		return (ft_putchar(va_arg(*args, int)));
 	else if (*format == 's')
@@ -26,7 +30,7 @@ int	print_formats(const char *format, va_list *args)
 	else if (*format == 'u')
 		return (ft_putunbr(va_arg(*args, unsigned int)));
 	else if (*format == 'x' || *format == 'X')
-		return (ft_puthex(va_arg(*args, int), *format));
+		return (ft_puthex(va_arg(*args, int), *format, data));
 	else if (*format == '%')
 	{
 		write(1, "%", 1);
@@ -51,6 +55,9 @@ int	ft_printf(const char *format, ...)
 		}
 		else
 			count += write(1, format, 1);
+		while (!ft_is_specifier(*format) && *format)
+			format++;
+		if (*format != '\0')
 		format++;
 	}
 	va_end(args);
@@ -79,11 +86,10 @@ int	ft_printf(const char *format, ...)
 // 	return (0);
 // }
 
-// #include <stdio.h>
-// int	main(void)
-// {
-// 	int nbr = -2;
-// 	printf("original= %x\n", nbr);
-// 	ft_printf("42=       %x\n", nbr);
-// 	return (0);
-// }
+#include <stdio.h>
+int	main(void)
+{
+	int nbr = 123;
+	ft_printf("%#x\n", nbr);
+	return (0);
+}
