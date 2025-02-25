@@ -6,7 +6,7 @@
 #    By: anakin <anakin@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/02/15 16:16:05 by anakin            #+#    #+#              #
-#    Updated: 2025/02/15 16:17:39 by anakin           ###   ########.fr        #
+#    Updated: 2025/02/24 21:39:31 by anakin           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -22,7 +22,8 @@ SRCS = ft_printf.c \
 	ft_putnbr.c \
 	ft_putptr.c \
 	ft_putstr.c \
-	ft_putunbr.c
+	ft_putunbr.c \
+	ft_flags.c
 
 OBJS = $(SRCS:.c=.o)
 
