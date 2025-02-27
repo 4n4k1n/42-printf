@@ -6,7 +6,7 @@
 /*   By: anakin <anakin@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/15 15:33:39 by anakin            #+#    #+#             */
-/*   Updated: 2025/02/22 10:26:37 by anakin           ###   ########.fr       */
+/*   Updated: 2025/02/27 15:53:16 by anakin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,17 +15,6 @@
 
 # include <unistd.h>
 # include <stdarg.h>
-# include <stdlib.h>
-
-typedef struct s_flags
-{
-	int		plus;
-	int		minus;
-	int		zero;
-	int		hash;
-	int		space;
-	char	type;
-}	t_flags;
 
 int	ft_putchar(char c);
 int	ft_putstr(char *str);
