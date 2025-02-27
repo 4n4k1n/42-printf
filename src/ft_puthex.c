@@ -6,11 +6,11 @@
 /*   By: anakin <anakin@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/14 19:15:11 by anakin            #+#    #+#             */
-/*   Updated: 2025/02/23 11:53:48 by anakin           ###   ########.fr       */
+/*   Updated: 2025/02/27 15:57:06 by anakin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_printf.h"
+#include "../ft_printf.h"
 
 static int	ft_hex_base(unsigned int nbr, char *base)
 {

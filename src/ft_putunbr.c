@@ -1,41 +1,36 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putnbr.c                                     :+:      :+:    :+:   */
+/*   ft_putunbr.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: anakin <anakin@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/02/14 18:41:51 by anakin            #+#    #+#             */
-/*   Updated: 2025/02/14 21:40:52 by anakin           ###   ########.fr       */
+/*   Created: 2025/02/14 18:48:56 by anakin            #+#    #+#             */
+/*   Updated: 2025/02/27 15:57:29 by anakin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_printf.h"
+#include "../ft_printf.h"
 
-int	ft_putnbr(int n)
+int	ft_putunbr(unsigned int nbr)
 {
-	int	negativ;
+	int	count;
 
-	negativ = 0;
-	if (n == -2147483648)
+	count = 0;
+	if (nbr < 10)
 	{
-		write(1, "-2147483648", 11);
-		return (11);
-	}
-	if (n < 0)
-	{
-		write(1, "-", 1);
-		n = n * (-1);
-		negativ = 1;
-	}
-	if (n < 10)
-	{
-		write(1, &"0123456789"[n], 1);
-		if (negativ == 1)
-			return (2);
+		write(1, &"0123456789"[nbr], 1);
 		return (1);
 	}
-	negativ += ft_putnbr(n / 10);
-	write(1, &"0123456789"[n % 10], 1);
-	return (negativ + 1);
+	count += ft_putunbr(nbr / 10);
+	write(1, &"0123456789"[nbr % 10], 1);
+	return (count + 1);
 }
+
+// int main(void)
+// {
+// 	unsigned int nbr = 4294967295;
+// 	ft_print_usgnd_nbr(nbr);
+// 	write(1, "\n", 1);
+// 	return (0);
+// }

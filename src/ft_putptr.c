@@ -6,11 +6,11 @@
 /*   By: anakin <anakin@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/14 21:42:49 by anakin            #+#    #+#             */
-/*   Updated: 2025/02/22 23:42:10 by anakin           ###   ########.fr       */
+/*   Updated: 2025/02/27 15:57:18 by anakin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_printf.h"
+#include "../ft_printf.h"
 
 int	ft_print_usgnd_long_nbr_hex(unsigned long int nbr)
 {

@@ -1,19 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putchar.c                                       :+:      :+:    :+:   */
+/*   ft_putstr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: anakin <anakin@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/02/14 18:42:22 by anakin            #+#    #+#             */
-/*   Updated: 2025/02/15 15:40:43 by anakin           ###   ########.fr       */
+/*   Created: 2025/02/14 18:43:36 by anakin            #+#    #+#             */
+/*   Updated: 2025/02/27 15:57:24 by anakin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_printf.h"
+#include "../ft_printf.h"
 
-int	ft_putchar(char c)
+int	ft_putstr(char *str)
 {
-	write(1, &c, 1);
-	return (1);
+	int	i;
+
+	if (!str)
+		return (write(1, "(null)", 6));
+	i = 0;
+	while (str[i])
+	{
+		write(1, &str[i], 1);
+		i++;
+	}
+	return (i);
 }

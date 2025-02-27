@@ -6,12 +6,11 @@
 /*   By: anakin <anakin@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/14 18:00:20 by anakin            #+#    #+#             */
-/*   Updated: 2025/02/23 11:55:50 by anakin           ###   ########.fr       */
+/*   Updated: 2025/02/27 15:56:55 by anakin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_printf.h"
-#include <stdio.h>
+#include "../ft_printf.h"
 
 int	print_formats(const char *format, va_list *args)
 {

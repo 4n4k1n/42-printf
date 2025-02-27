@@ -1,28 +1,41 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putstr.c                                        :+:      :+:    :+:   */
+/*   ft_putnbr.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: anakin <anakin@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/02/14 18:43:36 by anakin            #+#    #+#             */
-/*   Updated: 2025/02/15 15:56:50 by anakin           ###   ########.fr       */
+/*   Created: 2025/02/14 18:41:51 by anakin            #+#    #+#             */
+/*   Updated: 2025/02/14 21:40:52 by anakin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_printf.h"
+#include "../ft_printf.h"
 
-int	ft_putstr(char *str)
+int	ft_putnbr(int n)
 {
-	int	i;
+	int	negativ;
 
-	if (!str)
-		return (write(1, "(null)", 6));
-	i = 0;
-	while (str[i])
+	negativ = 0;
+	if (n == -2147483648)
 	{
-		write(1, &str[i], 1);
-		i++;
+		write(1, "-2147483648", 11);
+		return (11);
 	}
-	return (i);
+	if (n < 0)
+	{
+		write(1, "-", 1);
+		n = n * (-1);
+		negativ = 1;
+	}
+	if (n < 10)
+	{
+		write(1, &"0123456789"[n], 1);
+		if (negativ == 1)
+			return (2);
+		return (1);
+	}
+	negativ += ft_putnbr(n / 10);
+	write(1, &"0123456789"[n % 10], 1);
+	return (negativ + 1);
 }
