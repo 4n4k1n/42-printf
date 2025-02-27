@@ -6,7 +6,7 @@
 #    By: anakin <anakin@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/02/15 16:16:05 by anakin            #+#    #+#              #
-#    Updated: 2025/02/15 16:17:39 by anakin           ###   ########.fr        #
+#    Updated: 2025/02/27 15:56:08 by anakin           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -16,24 +16,22 @@ CC = cc
 
 CFLAGS = -Wall -Wextra -Werror
 
-SRCS = ft_printf.c \
-	ft_putchar.c \
-	ft_puthex.c \
-	ft_putnbr.c \
-	ft_putptr.c \
-	ft_putstr.c \
-	ft_putunbr.c
+SRCS = src/ft_printf.c \
+	src/ft_putchar.c \
+	src/ft_puthex.c \
+	src/ft_putnbr.c \
+	src/ft_putptr.c \
+	src/ft_putstr.c \
+	src/ft_putunbr.c
 
 OBJS = $(SRCS:.c=.o)
-
-HEADERS = ft_printf.h
 
 all: $(NAME)
 
 $(NAME): $(OBJS)
 	ar rcs $(NAME) $(OBJS)
 
-%.o: %.c $(HEADERS)
+%.o: %.c ft_printf.h
 	$(CC) $(CFLAGS) -c $< -o $@
 
 clean:
