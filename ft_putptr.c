@@ -6,7 +6,7 @@
 /*   By: apregitz <apregitz@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/14 21:42:49 by anakin            #+#    #+#             */
-/*   Updated: 2025/03/08 17:58:03 by apregitz         ###   ########.fr       */
+/*   Updated: 2025/03/08 18:59:38 by apregitz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,7 @@ int	ft_put_ptr_rec(unsigned long int nbr)
 int	ft_putptr(void *ptr)
 {
 	if (!ptr)
-		return (ft_putstr("(nil)"));
+		return (ft_putstr("0x0"));
 	return (ft_putstr("0x") + ft_put_ptr_rec((unsigned long int)ptr));
 }
 
