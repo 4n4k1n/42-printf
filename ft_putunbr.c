@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_putunbr.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: anakin <anakin@student.42.fr>              +#+  +:+       +#+        */
+/*   By: apregitz <apregitz@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/14 18:48:56 by anakin            #+#    #+#             */
-/*   Updated: 2025/02/15 15:43:48 by anakin           ###   ########.fr       */
+/*   Updated: 2025/03/08 17:58:50 by apregitz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,11 +19,11 @@ int	ft_putunbr(unsigned int nbr)
 	count = 0;
 	if (nbr < 10)
 	{
-		write(1, &"0123456789"[nbr], 1);
+		ft_putchar("0123456789"[nbr]);
 		return (1);
 	}
 	count += ft_putunbr(nbr / 10);
-	write(1, &"0123456789"[nbr % 10], 1);
+	ft_putchar("0123456789"[nbr % 10]);
 	return (count + 1);
 }
 
