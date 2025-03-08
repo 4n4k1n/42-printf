@@ -6,7 +6,7 @@
 /*   By: apregitz <apregitz@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/14 18:43:36 by anakin            #+#    #+#             */
-/*   Updated: 2025/03/08 17:48:20 by apregitz         ###   ########.fr       */
+/*   Updated: 2025/03/08 19:05:05 by apregitz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ int	ft_putstr(char *s)
 	int	count;
 
 	if (!s)
-		ft_putstr("(null)");
+		return (ft_putstr("(null)"));
 	count = -1;
 	while (s[++count])
 		ft_putchar(s[count]);
