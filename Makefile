@@ -6,15 +6,19 @@
 #    By: apregitz <apregitz@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/02/15 16:16:05 by anakin            #+#    #+#              #
-#    Updated: 2025/03/09 13:06:58 by apregitz         ###   ########.fr        #
+#    Updated: 2025/03/09 13:14:56 by apregitz         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = libftprintf.a
 
 CC = cc
-
+AR = ar rcs
+RM = rm -f
 CFLAGS = -Wall -Wextra -Werror
+
+SRC_DIR = src
+OBJ_DIR = obj
 
 SRCS = ft_printf.c \
 	ft_putchar.c \
@@ -25,24 +29,25 @@ SRCS = ft_printf.c \
 	ft_putunbr.c \
 	ft_error.c
 
-OBJS = $(SRCS:.c=.o)
+OBJS := $(addprefix $(OBJ_DIR)/, $(SRCS:.c=.o))
 
 all: $(NAME)
 
-$(NAME): $(OBJS)
-	ar rcs $(NAME) $(OBJS)
+$(NAME): $(OBJ_DIR) $(OBJS)
+	$(AR) $(NAME) $(OBJS)
 
-%.o: %.c ft_printf.h
+$(OBJ_DIR)/%.o: $(SRC_DIR)/%.c ft_printf.h
 	$(CC) $(CFLAGS) -c $< -o $@
 
+$(OBJ_DIR):
+	mkdir -p $(OBJ_DIR)
+
 clean:
-	rm -f $(OBJS)
+	$(RM) -r $(OBJ_DIR)
 
 fclean: clean
-	rm -f $(NAME)
+	$(RM) $(NAME)
 
 re: fclean all
 
-bonus: all
-
-.PHONY: all clean fclean re bonus
+.PHONY: all bonus clean fclean re%
