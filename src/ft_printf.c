@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_printf.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: anakin <anakin@student.42.fr>              +#+  +:+       +#+        */
+/*   By: apregitz <apregitz@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/14 18:00:20 by anakin            #+#    #+#             */
-/*   Updated: 2025/02/27 15:56:55 by anakin           ###   ########.fr       */
+/*   Updated: 2025/03/09 13:07:42 by apregitz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,10 +27,7 @@ int	print_formats(const char *format, va_list *args)
 	else if (*format == 'x' || *format == 'X')
 		return (ft_puthex(va_arg(*args, int), *format));
 	else if (*format == '%')
-	{
-		write(1, "%", 1);
-		return (1);
-	}
+		return (ft_putchar('%'));
 	return (0);
 }
 
@@ -41,6 +38,7 @@ int	ft_printf(const char *format, ...)
 
 	count = 0;
 	va_start(args, format);
+	set_error(0);
 	while (*format)
 	{
 		if (*format == '%')
@@ -49,7 +47,12 @@ int	ft_printf(const char *format, ...)
 			count += print_formats(format, &args);
 		}
 		else
-			count += write(1, format, 1);
+			count += ft_putchar(*format);
+		if (*(get_error()) == 1)
+		{
+			va_end(args);
+			return (-1);
+		}
 		format++;
 	}
 	va_end(args);
@@ -79,10 +82,16 @@ int	ft_printf(const char *format, ...)
 // }
 
 // #include <stdio.h>
+
 // int	main(void)
 // {
-// 	int nbr = -2;
-// 	printf("original= %x\n", nbr);
-// 	ft_printf("42=       %x\n", nbr);
+// 	int	nbr;
+// 	int	i;
+
+// 	nbr = -2;
+// 	i = printf(" %%");
+// 	printf("\n%d\n", i);
+// 	i = ft_printf(" %%");
+// 	ft_printf("\n%d\n", i);
 // 	return (0);
 // }

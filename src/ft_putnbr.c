@@ -19,23 +19,23 @@ int	ft_putnbr(int n)
 	negativ = 0;
 	if (n == -2147483648)
 	{
-		write(1, "-2147483648", 11);
+		ft_putstr("-2147483648");
 		return (11);
 	}
 	if (n < 0)
 	{
-		write(1, "-", 1);
+		ft_putchar('-');
 		n = n * (-1);
 		negativ = 1;
 	}
 	if (n < 10)
 	{
-		write(1, &"0123456789"[n], 1);
+		ft_putchar("0123456789"[n]);
 		if (negativ == 1)
 			return (2);
 		return (1);
 	}
 	negativ += ft_putnbr(n / 10);
-	write(1, &"0123456789"[n % 10], 1);
+	ft_putchar("0123456789"[n % 10]);
 	return (negativ + 1);
 }

@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: anakin <anakin@student.42.fr>              +#+  +:+       +#+         #
+#    By: apregitz <apregitz@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/02/15 16:16:05 by anakin            #+#    #+#              #
-#    Updated: 2025/02/27 15:56:08 by anakin           ###   ########.fr        #
+#    Updated: 2025/03/09 13:06:58 by apregitz         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -16,13 +16,14 @@ CC = cc
 
 CFLAGS = -Wall -Wextra -Werror
 
-SRCS = src/ft_printf.c \
-	src/ft_putchar.c \
-	src/ft_puthex.c \
-	src/ft_putnbr.c \
-	src/ft_putptr.c \
-	src/ft_putstr.c \
-	src/ft_putunbr.c
+SRCS = ft_printf.c \
+	ft_putchar.c \
+	ft_puthex.c \
+	ft_putnbr.c \
+	ft_putptr.c \
+	ft_putstr.c \
+	ft_putunbr.c \
+	ft_error.c
 
 OBJS = $(SRCS:.c=.o)
 

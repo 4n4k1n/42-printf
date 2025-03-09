@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_puthex.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: anakin <anakin@student.42.fr>              +#+  +:+       +#+        */
+/*   By: apregitz <apregitz@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/14 19:15:11 by anakin            #+#    #+#             */
-/*   Updated: 2025/02/27 15:57:06 by anakin           ###   ########.fr       */
+/*   Updated: 2025/03/09 13:08:13 by apregitz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ static int	ft_hex_base(unsigned int nbr, char *base)
 	result = 0;
 	if (nbr >= 16)
 		result += ft_hex_base(nbr / 16, base);
-	write(1, &base[nbr % 16], 1);
+	ft_putchar(base[nbr % 16]);
 	return (result + 1);
 }
 

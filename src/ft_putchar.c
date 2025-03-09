@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_putchar.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: anakin <anakin@student.42.fr>              +#+  +:+       +#+        */
+/*   By: apregitz <apregitz@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/14 18:42:22 by anakin            #+#    #+#             */
-/*   Updated: 2025/02/27 15:57:01 by anakin           ###   ########.fr       */
+/*   Updated: 2025/03/09 13:08:14 by apregitz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,10 @@
 
 int	ft_putchar(char c)
 {
-	write(1, &c, 1);
+	if (!(*get_error()))
+	{
+		if (write(1, &c, 1) < 1)
+			set_error(1);
+	}
 	return (1);
 }
